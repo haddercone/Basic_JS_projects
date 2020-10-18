@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Notes</title>
+    <style>
+    body{
+        background-color: #88e69475;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto;
+        
+    }
+    .wrapper
+    {
+        box-shadow: 10px 10px 10px 0  rgb(196, 196, 196) ;
+        background: #fff;;
+        margin: 5% 10%;
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        /* grid-auto-rows: minmax(600px,auto); */
+        
+        
+    }
+    
+    #content{
+        min-width: 550px;
+        max-width:550px;
+        max-height: 467px;
+        min-height: 467px;
+    }
+    #title{
+        padding: 10px 5px;
+        /* border: 1px solid black */
+        width: 550px;
+    }
+    .form{
+        background: #ddd;
+        padding: 20px;
+    }
+    .container
+    {
+        padding: 10px;
+        height: 590px;
+        /* background: #eee; */
+        overflow:auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        grid-auto-columns: minmax(100px,auto);
+
+    }
+    .heading,.sub-content{
+        margin: 0;
+        padding:10px ;
+        
+    }
+    .heading{
+        /* padding:15px 10px; */
+        border-radius: 5px 5px 0 0;
+        font-size: 20px;
+        background: #01ebfc;
+        /*  */
+        font-weight:bolder;
+    }
+    .sub-content{
+        border-radius:0 0 5px 5px;
+        background: #13f7ff;
+    }
+    input[type='button']{
+        padding: 10px 20px;
+        background: #00d9ff;
+        border:none;
+        color: #fff;
+
+    }
+    input[type='button']:hover{
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, molestiae dolor porro optio ducimus nulla quae reprehenderit pariatur autem sint, sit beatae excepturi ullam voluptas explicabo? Corporis provident maiores et in ullam ex ab maxime magnam voluptates quaerat. Recusandae odio est quae tenetur, exercitationem, ut repellat suscipit saepe esse illo impedit praesentium sed iste minus expedita, asperiores maiores. Dolore obcaecati, doloribus aliquam saepe dolorum asperiores expedita autem, magnam in pariatur minus sapiente porro praesentium ipsa tempore architecto soluta, error deleniti odit! Aliquam cupiditate itaque nostrum nam, unde quibusdam saepe impedit, pariatur exercitationem, eveniet atque repellendus quasi a ullam aliquid distinctio. -->
+    <div class="wrapper"> 
+    <div class="form">
+        <form class ='myform'>
+            <input type="text" name="title" id="title"placeholder="Enter title"> <br><br>
+            <textarea name="content" id="content"placeholder="Enter text here"></textarea> <br>
+            <input type="button" value="Add"onclick="addNote()">
+        </form>
+    </div>
+        <div class="container"></div>
+    </div>
+    <script>
+    
+        function addNote(){
+        var title = document.getElementById('title');
+        var content = document.getElementById('content');
+        if (content.value == '' || title.value == ''){
+            alert('Enter credentials first')
+        }
+        else{
+        var d = document.getElementsByClassName('container')[0];
+        var note = document.createElement('div')
+        var tcontainer = document.createElement('p');
+        var ccontainer = document.createElement('p');
+        tcontainer.setAttribute('class', 'heading');
+        ccontainer.setAttribute('class', 'sub-content');
+
+        tcontainer.innerHTML = title.value;
+        ccontainer.innerHTML = content.value;
+
+        note.appendChild(tcontainer);
+        note.appendChild(ccontainer);
+
+        d.appendChild(note);
+        }
+        // d.innerHTML = c.value;
+        
+    }
+    
+    </script>
+</body>
+</html>

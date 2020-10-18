@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Timer</title>
+</head>
+
+    <style>
+        *{
+            font-family: Montserrat;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .timer{
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 10px;
+        }
+      
+        .timercount
+        {
+            background-color: rgb(235, 211, 211);
+            width: 70px;
+        }
+        .row-2{
+            font-size: .7rem;
+            font-weight: bold;
+            color: grey;
+        }
+    </style>
+<body>
+    <div class="container">
+        <table class="timer">
+            <tr>
+                <td class="timercount" id="hours">00</td>
+                <td class="timercount" id="minute">00 </td>
+                <td class="timercount"id="second">00</td>
+            </tr>
+            <tr class="row-2">
+                <td>hours</td>
+                <td>minutes</td>
+                <td>seconds</td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            countDown();
+        });
+        function countDown() {
+            var hour = document.getElementById('hours');
+            var mins = document.getElementById('minute');
+            var secs = document.getElementById('second');
+            // var hr = 0;
+            // var min = 0;
+            // var sec = 0;
+
+            // var a = setInterval(count, 1000);
+            // function count(){
+            //     sec++;
+            //     seconds.innerHTML = sec;
+            //     if(sec == 60){
+            //         min++;
+            //         minutes.innerHTML = min;
+            //         sec = 0;
+            //         if(min == 60){
+
+            //             hr++;
+            //             hour.innerHTML = hr;
+            //             min =0;
+            //         }
+            //     }
+            // }
+            hours = 1;
+            minutes = 0;
+            seconds = 1;
+            
+            var inc = setInterval(dec, 1000);
+            function dec() {
+                seconds--;
+                
+                hour.innerHTML = hours;
+                if(hours < 10){
+                    hour.innerHTML = '0' + hours;
+                }
+                mins.innerHTML = minutes;
+                if(minutes < 10){
+                    mins.innerHTML = '0' + minutes;
+                    }
+                secs.innerHTML = seconds;
+                if(seconds < 10){
+                    secs.innerHTML = '0' + seconds;
+                    }
+                
+                
+                if (seconds == 0) {
+                    if(minutes == 0){
+                        minutes = 60;
+                        if(hours == 0){
+                            
+                            clearInterval(inc);
+                            pop();
+                        }
+                        hours--;
+                    }
+                    seconds = 60;
+                    minutes--;
+                }
+                
+            }
+        }
+        function pop() {
+            alert("time is over");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS counter</title>
+    <style>
+        *
+        {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        #sub ,#add{
+            padding: 5px 10px;
+            background-color: skyblue;
+            border: 2px solid blue;
+            color: blue;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 2px;
+            outline: none;
+        }
+        #counter{
+            padding: 10px;
+        }
+        .container{
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <button id="sub">&minus;</button>
+        <span id="counter">1</span>
+        <button id="add">&plus;</button>
+        <div>
+            <p>Total price: <span id="value">199</span> $</p>
+        </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
