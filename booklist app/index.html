@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List App</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4"> 
+            <i class="fas fa-book-open text-primary"></i>My 
+            <span class="text-primary">BookList</span>
+        </h1>
+        <form  id="book-form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="" id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" name="" id="author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="isbn">ISBN Number</label>
+                <input type="text" name="" id="isbn" class="form-control">
+            </div>
+            <input type="submit" value="Add Book" class="btn btn-primary btn-block mt-2">
+        </form>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th></th>
+                    
+                </tr>
+                <tbody id="book-list"></tbody>
+            </thead>
+        </table>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
